@@ -1,0 +1,10 @@
+// 防抖
+const debounce = (fn: () => void, wait = 33.34) => {
+      let timmer: ReturnType<typeof setTimeout> | null
+      return () => {
+        timmer && clearTimeout(timmer)
+        timmer = setTimeout(() => {
+          fn()
+        }, wait)
+      }
+}
